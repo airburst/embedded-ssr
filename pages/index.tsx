@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
+import { useId } from '@react-aria/utils';
 import { type QuoteFormData } from '../types';
 import Head from 'next/head';
 import { Text, TextField, Button } from '@simplybusiness/mobius-core';
@@ -37,7 +38,6 @@ const Home: NextPage = () => {
 
       <form className={styles.quoteForm} onSubmit={handleSubmit(onSubmit)}>
         <TextField
-          id="firstName"
           label="First name"
           {...register('firstName', {
             required: 'Please enter your first name',
@@ -51,7 +51,6 @@ const Home: NextPage = () => {
         />
 
         <TextField
-          id="lastName"
           label="Last name"
           {...register('lastName', {
             required: 'Please enter your last name',
@@ -65,7 +64,6 @@ const Home: NextPage = () => {
         />
 
         <TextField
-          id="email"
           label="Email"
           {...register('email', {
             required: 'Please enter a valid email address',
@@ -76,7 +74,6 @@ const Home: NextPage = () => {
         />
 
         <TextField
-          id="postcode"
           label="Postcode"
           {...register('postcode', {
             required: 'Please enter a valid postcode',
