@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { Text, SegmentGroup, Segment } from '@simplybusiness/mobius-core';
-import styles from './Quote.module.css';
+import styles from '../styles/Quote.module.css';
 
 type Price = {
   amount: number;

@@ -35,7 +35,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Text variant="h1">What are you looking for?</Text>
+      <Text variant="h2">Protect your shizzle</Text>
 
       <form className={styles.quoteForm} onSubmit={handleSubmit(onSubmit)}>
         <TextField

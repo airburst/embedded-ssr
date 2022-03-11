@@ -34,7 +34,8 @@ type Props = {
 };
 
 const Home: NextPage<Props> = ({ data }) => {
-  // console.log('🚀 ~ quotes.tsx ~ data', data);
+  console.log('🚀 ~ quotes.tsx ~ data', data);
+
   const { error, message } = data;
 
   if (error || message) {
