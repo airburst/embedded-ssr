@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { useId } from '@react-aria/utils';
 import { type QuoteFormData } from '../types';
 import Head from 'next/head';
 import { Text, TextField, Button } from '@simplybusiness/mobius-core';
@@ -16,9 +15,11 @@ const Home: NextPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const [loading, setLoading] = useState(false);
 
   const onSubmit = async (data: QuoteFormData) => {
     if (Object.keys(errors).length === 0) {
+      setLoading(true);
       // Redirect to quotes page to run query
       router.push({ pathname: 'quotes', query: data });
     }
@@ -83,7 +84,13 @@ const Home: NextPage = () => {
           errorMessage={errors.postcode?.message}
         />
 
-        <Button type="submit">Find Quotes</Button>
+        <Button
+          type="submit"
+          loading={loading}
+          variant={loading ? 'basic' : 'primary'}
+        >
+          Find Quotes
+        </Button>
       </form>
     </div>
   );
