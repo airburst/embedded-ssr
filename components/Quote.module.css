@@ -4,3 +4,11 @@
   width: 100%;
   margin-bottom: var(--size-40);
 }
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
